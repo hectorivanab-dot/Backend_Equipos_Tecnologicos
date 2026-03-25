@@ -1,0 +1,67 @@
+### Obtener todos los equipos
+GET http://127.0.0.1:8000/api/productos/
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjM3MzAwNzY5YTA3ZTA1MTE2ZjdlNTEzOGZhOTA5MzY4NWVlYmMyNDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbWlhcHB0YXJlYXMtOWM3NzIiLCJhdWQiOiJtaWFwcHRhcmVhcy05Yzc3MiIsImF1dGhfdGltZSI6MTc3NDQxMDk3OSwidXNlcl9pZCI6IllUQjBDTGVFaENSWHJuNjR1bjFXWmxlMDJaajEiLCJzdWIiOiJZVEIwQ0xlRWhDUlhybjY0dW4xV1psZTAyWmoxIiwiaWF0IjoxNzc0NDEwOTc5LCJleHAiOjE3NzQ0MTQ1NzksImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.BIRVuRHN-8V4mtJephheP_px1A3NI5qBWUbrwxynErtFJCZmYupgkN7EJqIhmqSOjN2cOeI4cnB7wUu_Jor17dv_AbB-SKdqnhvDMSbvbWggQ-_po8fiGqvaNofAijDjIUx5TTj1n-WR3nrbnTQfGAzOlyiBPRGfzD2ifYcNt5sVaCUq9NuLj0fTJW3wgrxMRPSsWYwcGkST1MU1TwOo893WjQE4SYJWcW9fKlmLIzwgqhJ3q2pnBHxk31xY6mL7575VQOI9AgSvrBXOfkugsJSjafIdnci_CKr_iF8R-GPHg54kFRUkBXJMZcqJMMJEWod7eBeFcNCSBjb0sLfneQ
+
+### GENERAR SOLICITUDES
+POST http://127.0.0.1:8000/api/solicitudes/
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjM3MzAwNzY5YTA3ZTA1MTE2ZjdlNTEzOGZhOTA5MzY4NWVlYmMyNDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbWlhcHB0YXJlYXMtOWM3NzIiLCJhdWQiOiJtaWFwcHRhcmVhcy05Yzc3MiIsImF1dGhfdGltZSI6MTc3NDQxMDk3OSwidXNlcl9pZCI6IllUQjBDTGVFaENSWHJuNjR1bjFXWmxlMDJaajEiLCJzdWIiOiJZVEIwQ0xlRWhDUlhybjY0dW4xV1psZTAyWmoxIiwiaWF0IjoxNzc0NDEwOTc5LCJleHAiOjE3NzQ0MTQ1NzksImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFkbWluQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.BIRVuRHN-8V4mtJephheP_px1A3NI5qBWUbrwxynErtFJCZmYupgkN7EJqIhmqSOjN2cOeI4cnB7wUu_Jor17dv_AbB-SKdqnhvDMSbvbWggQ-_po8fiGqvaNofAijDjIUx5TTj1n-WR3nrbnTQfGAzOlyiBPRGfzD2ifYcNt5sVaCUq9NuLj0fTJW3wgrxMRPSsWYwcGkST1MU1TwOo893WjQE4SYJWcW9fKlmLIzwgqhJ3q2pnBHxk31xY6mL7575VQOI9AgSvrBXOfkugsJSjafIdnci_CKr_iF8R-GPHg54kFRUkBXJMZcqJMMJEWod7eBeFcNCSBjb0sLfneQ
+
+{
+    "producto_id": "123",
+    "cantidad": "2"
+}
+
+### Registrarse
+POST http://127.0.0.1:8000/api/auth/registro/
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "jrmm2008",
+    "rol": "administrador"
+}
+
+### 2. Iniciar sesión para conseguir el Token (POST)
+POST http://127.0.0.1:8000/api/auth/login/
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "jrmm2008"
+}
+
+### 3. Añadir un producto USANDO EL TOKEN (POST)
+POST http://127.0.0.1:8000/api/productos/
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+    "titulo": "Computador Lenovo 1",
+    "descripcion": "Esto es de prueba :)"
+}
+
+### 4. Actualizar 
+PUT http://127.0.0.1:8000/api/productos/qHs5vDzauinBZaNdlH97/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjM3MzAwNzY5YTA3ZTA1MTE2ZjdlNTEzOGZhOTA5MzY4NWVlYmMyNDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbWlhcHB0YXJlYXMtOWM3NzIiLCJhdWQiOiJtaWFwcHRhcmVhcy05Yzc3MiIsImF1dGhfdGltZSI6MTc3NDQwNzM2OCwidXNlcl9pZCI6ImpvZUxlcWxVOVNQdjcxYnBJU0NHNG5zZU8wVzIiLCJzdWIiOiJqb2VMZXFsVTlTUHY3MWJwSVNDRzRuc2VPMFcyIiwiaWF0IjoxNzc0NDA3MzY4LCJleHAiOjE3NzQ0MTA5NjgsImVtYWlsIjoianJtbUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsianJtbUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.hhdR_LQZ8P_bwgt7NNvYGQ2VkDRXIXf7Zg6O3jcufp3iYOmEeLL0dTfFRxy-8MB9F8y2YxbhX1WRkRS_GewdtZpjDm6UAoAfOwOvxcLaoJ9G3MvKVdKgNBfJKUmf19df7AHS8I_chDamL44WuQ9pfh8tLhHlWLnX-9wmHNlFJUBqjclxQSKb6JhLjDNxdjvrtG5VgoP5CoDpK-vP3t6zLooMve3lWXThDahX8Ue0VwqtcyJ-pZdJLjDhG-rwg8rKEK4XcSEDu7aWXV_IsCLwOTwU1lVRgd3CTGeCWXeEVnpK8tIduzdl97rH3PirKcqnVzBG77huI5O5uPCr36hSig
+
+{
+    "titulo": "wdwdada 1 :)",
+    "descripcion": "Esta  a sido actualizada"
+}
+
+### 5. Eliminar 
+DELETE http://127.0.0.1:8000/api/productos/qHs5vDzauinBZaNdlH97/
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjM3MzAwNzY5YTA3ZTA1MTE2ZjdlNTEzOGZhOTA5MzY4NWVlYmMyNDAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbWlhcHB0YXJlYXMtOWM3NzIiLCJhdWQiOiJtaWFwcHRhcmVhcy05Yzc3MiIsImF1dGhfdGltZSI6MTc3NDQwNzM2OCwidXNlcl9pZCI6ImpvZUxlcWxVOVNQdjcxYnBJU0NHNG5zZU8wVzIiLCJzdWIiOiJqb2VMZXFsVTlTUHY3MWJwSVNDRzRuc2VPMFcyIiwiaWF0IjoxNzc0NDA3MzY4LCJleHAiOjE3NzQ0MTA5NjgsImVtYWlsIjoianJtbUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsianJtbUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.hhdR_LQZ8P_bwgt7NNvYGQ2VkDRXIXf7Zg6O3jcufp3iYOmEeLL0dTfFRxy-8MB9F8y2YxbhX1WRkRS_GewdtZpjDm6UAoAfOwOvxcLaoJ9G3MvKVdKgNBfJKUmf19df7AHS8I_chDamL44WuQ9pfh8tLhHlWLnX-9wmHNlFJUBqjclxQSKb6JhLjDNxdjvrtG5VgoP5CoDpK-vP3t6zLooMve3lWXThDahX8Ue0VwqtcyJ-pZdJLjDhG-rwg8rKEK4XcSEDu7aWXV_IsCLwOTwU1lVRgd3CTGeCWXeEVnpK8tIduzdl97rH3PirKcqnVzBG77huI5O5uPCr36hSig
+
+### Foto de perfil
+POST http://127.0.0.1:8000/api/perfil/foto/
+Authorization: Bearer 
+Content-Type: multipart/form-data; boundary=MiBoundary
+
+--MiBoundary
+Content-Disposition: form-data; name="imagen"; filename="avatar.jpg"
+Content-Type: image/jpeg
+
+< ./avatar.jpg
+--MiBoundary--
